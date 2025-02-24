@@ -1,0 +1,12 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  /* Container centralizado com Flexbox */
+  .container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    height: 100%;
+  }
