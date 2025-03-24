@@ -1,12 +1,94 @@
-html, body {
-    height: 100%;
-    margin: 0;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #333;
+  padding: 10px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: #575757;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  min-height: 100vh
+}
+
+/* Container de descrição e container de foto têm tamanho flexível */
+.descricao, .foto {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Centralizando a imagem e tornando-a responsiva */
+.foto img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.descricao .conteudo {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cada container de projeto */
+.projeto-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  min-height: 100vh
+}
+
+/* Divs internas de cada projeto */
+.projeto-container .lado-esquerdo,
+.projeto-container .lado-direito {
+  flex: 1;
+  padding: 10px;
+}
+
+.lado-direito img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Responsividade: empilha os itens em telas menores */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .home-container {
+    flex-direction: column;
   }
   
-  /* Container centralizado com Flexbox */
-  .container {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;     /* Centraliza verticalmente */
-    height: 100%;
+  /* Define a ordem para que a foto apareça primeiro */
+  .foto {
+    order: 1;
   }
+  .descricao {
+    order: 2;
+  }
+
+}
